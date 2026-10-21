@@ -7,7 +7,6 @@ body {
 .banner {
   width: 500px;
   margin: 0 auto;
-  display: block;
   text-align: right;
 }
 .banner img {
@@ -23,9 +22,8 @@ body {
   }
 }
 .main-content {
-  display: block;
   width: 500px;
-  margin: 0 auto 0;
+  margin: 0 auto;
 }
 .task-input,
 .task-label {
@@ -38,7 +36,7 @@ body {
 }
 ul {
   margin: 0;
-  padding: 0px;
+  padding: 0;
 }
 li {
   list-style: none;
@@ -49,7 +47,7 @@ button {
 }
 button {
   background: none;
-  border: 0px;
+  border: 0;
   color: #888;
   font-size: 15px;
   width: 60px;
@@ -59,6 +57,7 @@ button {
 button:hover {
   color: #3a3a3a;
 }
+
 /* Heading */
 h1,
 h2,
@@ -105,9 +104,6 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-li > * {
-  vertical-align: middle;
 }
 
 li > input[type='checkbox'] {
