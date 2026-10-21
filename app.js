@@ -13,7 +13,7 @@ const createNewTaskElement = function (taskString) {
   const editButton = createDomElement('button', { innerText: 'Edit', className: 'edit-button' }); //innerText encodes special characters, HTML does not.
 
   const deleteButton = createDomElement('button', { className: 'delete-button' });
-  const deleteButtonImg = createDomElement('img', { src: './remove.svg' });
+  const deleteButtonImg = createDomElement('img', { src: './remove.svg', alt: 'remove' });
 
   deleteButton.append(deleteButtonImg);
 
