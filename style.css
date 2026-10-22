@@ -27,8 +27,6 @@ body {
 }
 .task-input,
 .task-label {
-  width: 56%;
-  display: inline-block;
   flex-grow: 1;
 }
 .add-task-form {
@@ -113,10 +111,6 @@ li > label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
-  width: 226px;
-}
-li > input[type='text'] {
-  width: 226px;
 }
 button.delete-button img {
   height: 2em;
