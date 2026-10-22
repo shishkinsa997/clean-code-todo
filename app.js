@@ -1,17 +1,17 @@
 const taskInput = document.getElementById('new-task');
 const addButton = document.getElementById('add-button');
-const incompleteTaskHolder = document.getElementById('incomplete-tasks');
+const incompleteTasksHolder = document.getElementById('incomplete-tasks');
 const completedTasksHolder = document.getElementById('completed-tasks');
 
 const createDomElement = (tag, properties = {}) => {
   return Object.assign(document.createElement(tag), properties);
 };
 
-const createNewTaskElement = function (taskString) {
+const createNewTaskElement = function (taskText) {
   const listItem = createDomElement('li');
 
   const checkBox = createDomElement('input', { type: 'checkbox' });
-  const label = createDomElement('label', { innerText: taskString, className: 'task-label' });
+  const label = createDomElement('label', { innerText: taskText, className: 'task-label' });
 
   const editInput = createDomElement('input', { type: 'text', className: 'task-input' });
   const editButton = createDomElement('button', { innerText: 'Edit', className: 'edit-button' }); //innerText encodes special characters, HTML does not.
@@ -29,7 +29,7 @@ const addTask = function () {
   if (!taskInput.value.trim()) return;
   const listItem = createNewTaskElement(taskInput.value);
 
-  incompleteTaskHolder.append(listItem);
+  incompleteTasksHolder.append(listItem);
 
   taskInput.value = '';
 };
@@ -73,12 +73,12 @@ const handleTaskChange = function (event) {
   const listItem = checkBox.closest('li');
   if (!listItem) return;
 
-  const targetHolder = checkBox.checked ? completedTasksHolder : incompleteTaskHolder;
+  const targetHolder = checkBox.checked ? completedTasksHolder : incompleteTasksHolder;
   targetHolder.append(listItem);
 };
 
 addButton.addEventListener('click', addTask);
-incompleteTaskHolder.addEventListener('click', handleTaskClick);
+incompleteTasksHolder.addEventListener('click', handleTaskClick);
 completedTasksHolder.addEventListener('click', handleTaskClick);
-incompleteTaskHolder.addEventListener('change', handleTaskChange);
+incompleteTasksHolder.addEventListener('change', handleTaskChange);
 completedTasksHolder.addEventListener('change', handleTaskChange);
